@@ -21,7 +21,7 @@
 
   input[type=submit] {
     width: 100%;
-    background-color: #018795;
+    background-color: #0E367B;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -37,7 +37,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: #018795;
+    color: #0E367B;
     text-align: left;
   }
 
@@ -55,7 +55,7 @@
 
   }
 
-  
+
   .bcu-footer {
     display: none;
   }
@@ -70,11 +70,11 @@
 
         }));
         var contentUploader = new Box.ContentUploader();
-        contentUploader.show('64064254232', sessionStorage.getItem("accessToken"), {
+        contentUploader.show('68682761232', sessionStorage.getItem("accessToken"), {
           container: '.pcontainer'
         });
         contentUploader.addListener('complete', function(files) {
-          //window.location.replace('/Arriva/uploadedcctv.html');
+          window.location.replace('/booking/uploadedcctv.html');
 
         });
         contentUploader.addListener('complete', function(file) {
@@ -82,7 +82,7 @@
             var counter = 0;
             var target = file.length;
             file.forEach(function(f) {
-                //call metadata with fil
+                //call metadata with file
                 var id = f.id;
                 var data = "{\"firstName\":\"" + $("#fname").val() + "\",";
                 data = data + "\"lastName\":\"" + $("#lname").val() + "\",";
@@ -93,7 +93,7 @@
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "https://api.box.com/2.0/files/" + id + "/metadata/enterprise_48902184/busCctv",
+                  "url": "https://api.box.com/2.0/files/" + id + "/metadata/enterprise_34948972/buscctv",
                   "method": "POST",
                   "headers": {
                     "Authorization": "Bearer " + sessionStorage.getItem("accessToken"),
@@ -144,7 +144,7 @@
 
   <br>
 
-  <P>Arriva CCTV Upload With Mandatory Meta-Data Capture</p>
+  <P>Booking.com media uploader</p>
 
   <br>
   <div style="width: 100%; overflow: hidden;z-index:-9999;">
