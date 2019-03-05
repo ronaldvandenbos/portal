@@ -70,7 +70,7 @@
 
         }));
         var contentUploader = new Box.ContentUploader();
-        contentUploader.show('68682761232', sessionStorage.getItem("accessToken"), {
+        contentUploader.show('68682826590', sessionStorage.getItem("accessToken"), {
           container: '.pcontainer'
         });
         contentUploader.addListener('complete', function(files) {
@@ -131,7 +131,7 @@
                     counter++;
                     if (counter == target) {
                       console.log("now we can redirect");
-                      window.location.href = "/Arriva/uploadedcctv.html";
+                      window.location.href = "/booking/uploadedcctv.html";
                     }
                   });
                 });
