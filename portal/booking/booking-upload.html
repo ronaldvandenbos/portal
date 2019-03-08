@@ -86,14 +86,15 @@
                 var id = f.id;
                 var data = "{\"firstName\":\"" + $("#fname").val() + "\",";
                 data = data + "\"lastName\":\"" + $("#lname").val() + "\",";
-                data = data + "\"depot\":\"" + $("#depot").val() + "\",";
-                //data = data + "\"routeNumber\":\"" + $("#routeNumber").val() + "\",";
-                data = data + "\"caseId\":\"" + $("#caseID").val() + "\"}";
+                data = data + "\"country\":\"" + $("#country").val() + "\",";
+                data = data + "\"propertyName\":\"" + $("#propname").val() + "\",";
+                data = data + "\"propertyType\":\"" + $("#proptype").val() + "\",";
+                data = data + "\"city\":\"" + $("#city").val() + "\"}";
                 console.log(data);
                 var settings = {
                   "async": true,
                   "crossDomain": true,
-                  "url": "https://api.box.com/2.0/files/" + id + "/metadata/enterprise_34948972/buscctv",
+                  "url": "https://api.box.com/2.0/files/" + id + "/metadata/enterprise_34948972/bookingPropertyMedia",
                   "method": "POST",
                   "headers": {
                     "Authorization": "Bearer " + sessionStorage.getItem("accessToken"),
@@ -156,8 +157,8 @@
         <label for="lname">Last Name</label>
         <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 
-        <label for="depot">Depot</label>
-        <select id="depot" name="depot" required style="height:35px">
+        <label for="country">Country</label>
+        <select id="country" name="country" required style="height:35px">
           <option value="Netherland">Netherlands</option>
           <option value="Belgium">Belgium</option>
           <option value="France">France</option>
@@ -170,11 +171,20 @@
           <option value="Sweden">Sweden</option>
         </select>
 
-        <label for="routeNumber">Route Number</label>
-        <input type="text" id="routeNumber" name="routeNumber" placeholder="Route Number" required>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="City" required>
 
-        <label for="caseID">Case ID</label>
-        <input type="text" id="caseID" name="caseID" placeholder="Assigned case ID" required>
+        <label for="propname">Property Name</label>
+        <input type="text" id="propname" name="propname" placeholder="Property Name" required>        
+
+        <label for="proptype">Property Type</label>
+        <select id="proptype" name="proptype" placeholder="Property Type" required style="height: 35px">
+            <option value="Hotel">Hotel</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Bed & Breakfast">Bed & Breakfast</option>
+        </select>
+
+        
         <label for="caseID">Share with</label>
         <input type="text" id="collabID" name="collabID" placeholder="Collaborator email address" required>
 
