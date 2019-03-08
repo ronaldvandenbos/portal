@@ -51,7 +51,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: #018795;
+    color: #0E367B;
 
   }
 
@@ -74,7 +74,7 @@
           container: '.pcontainer'
         });
         contentUploader.addListener('complete', function(files) {
-          window.location.replace('/booking/uploadedcctv.html');
+        //  window.location.replace('/booking/uploadedcctv.html');
 
         });
         contentUploader.addListener('complete', function(file) {
@@ -87,7 +87,7 @@
                 var data = "{\"firstName\":\"" + $("#fname").val() + "\",";
                 data = data + "\"lastName\":\"" + $("#lname").val() + "\",";
                 data = data + "\"depot\":\"" + $("#depot").val() + "\",";
-                data = data + "\"routeNumber\":\"" + $("#routeNumber").val() + "\",";
+                //data = data + "\"routeNumber\":\"" + $("#routeNumber").val() + "\",";
                 data = data + "\"caseId\":\"" + $("#caseID").val() + "\"}";
                 console.log(data);
                 var settings = {
